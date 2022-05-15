@@ -1,6 +1,6 @@
 html {
-background-color: whitesmoke;
-overflow: hidden;
+  background-color: whitesmoke;
+  overflow: hidden;
 }
 
 header {
@@ -29,6 +29,7 @@ h1 {
   height: 100%;
   background-color: rgba(202, 155, 202, 0.912);
   border-radius: 10px;
+  text-align: right;
 }
 
 .set2 {
@@ -37,11 +38,70 @@ h1 {
   border-radius: 10px;
 }
 
+.play {
+  text-align: center;
+}
+
+.dice {
+  padding-top: 50px;
+  height: auto;
+}
+
+.rolldice {
+  padding-top: 100px;
+}
+
+.hold {
+  padding-top: 50px;
+}
+
+.player1,
+.player2 {
+  padding-top: 25px;
+  font-size: 30px;
+}
+
+.total {
+  padding-top: 60px;
+  text-align: center;
+}
+
+.current {
+  text-align: center;
+  padding-top: 200px;
+}
+
 @media screen and (max-width: 769px) {
   .set1 {
-    height: 50%;
+    height: 42%;
+    text-align: left;
+    padding-left: 15px;
   }
+
   .set2 {
-    height: 50%;
+    height: 42%;
   }
+
+  .set3 {
+    height: 10%;
+  }
+  .hidden-total {
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 30px;
+  }
+  .hidden-current {
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 20px;
+  }
+  .player1,
+.player2 {
+  font-size: 22px;
+}
+.dice {
+  height: 100px;
+  width: 50px;
+  margin-top: -65px;
+}
 }
