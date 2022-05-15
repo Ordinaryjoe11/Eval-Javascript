@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="fichier.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
   <title>DiceBoard</title>
 </head>
 
@@ -19,11 +21,52 @@
     </header>
 
     <section>
-      
-        <div class="board columns">
-          <div class="set1 column is-6">Yo</div>
-          <div class="set2 column is-6">Hey</div>
+
+      <div class="board columns">
+        <div class="set1 column">
+          <p class="player1 has-text-centered">
+            Player 1
+            <span class="icon has-text-warning">
+              <i class="fa-solid fa-circle"></i>
+            </span>
+          </p>
+          <p class="total is-hidden-mobile">Global Points</p>
+          <p class="current is-hidden-mobile">Current Points</p>
+          <p class="hidden-total is-hidden-tablet">Global Points</p>
+          <p class="hidden-current is-hidden-tablet">Current Points</p>
         </div>
+        <div class="column is-1">
+          <div class="play is-hidden-mobile">
+            <p>New Game <br><i class="fa-solid fa-plus"></i></p>
+            <p><img class="dice" src="Images/dice6.png" alt="Head's dice 6"></p>
+            <p class="rolldice">Roll Dice <br><i class="fa-solid fa-dice"></i></p>
+            <p class="hold">Hold <br><i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+          </div>
+        </div>
+        <div class="set3 columns is-mobile is-hidden-tablet">
+          <div class="column is-4 is-mobile is-hidden-tablet">New Game <i class="fa-solid fa-plus"></i>
+          </div>
+          <div class="column is-2 is-mobile is-hidden-tablet">
+            <img class="dice" src="Images/dice6.png" alt="Head's dice 6">
+          </div>
+          <div class="column is-3 is-mobile is-hidden-tablet has-text-right">Roll <i class="fa-solid fa-dice"></i>
+          </div>
+          <div class="column is-3 is-mobile is-hidden-tablet has-text-left">Hold <i
+              class="fa-solid fa-arrow-up-right-from-square"></i></i></div>
+        </div>
+        <div class="set2 column">
+          <p class="player2 has-text-centered">
+            Player 2
+            <span class="icon has-text-warning">
+              <i class="fa-solid fa-circle"></i>
+            </span>
+          </p>
+          <p class="total is-hidden-mobile">Global Points</p>
+          <p class="current is-hidden-mobile">Current Points</p>
+          <p class="hidden-total is-hidden-tablet">Global Points</p>
+          <p class="hidden-current is-hidden-tablet">Current Points</p>
+        </div>
+      </div>
 
     </section>
   </div>
