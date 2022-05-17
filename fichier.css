@@ -71,6 +71,19 @@ h1 {
   padding-top: 200px;
 }
 
+.background-dice {
+  height: 100%;
+  width: 100%;
+}
+
+.input {
+  border-color: orange;
+}
+
+.modal-content {
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 769px) {
   .set1 {
     height: 42%;
@@ -103,5 +116,12 @@ h1 {
   height: 100px;
   width: 50px;
   margin-top: -65px;
+}
+.modal-content {
+  height: auto;
+  width: 75%;
+}
+.names {
+  width: 50%;
 }
 }
