@@ -27,14 +27,22 @@
         <div class="set1 column">
           <div class="player1 has-text-centered">
             <p id="displayPlayer1">Player 1</p>
-            <span class="icon has-text-warning">
-              <i class="fa-solid fa-circle"></i>
-            </span>
+            
+              <i class="fa-solid fa-circle active" id="playerOne"></i>
+            
           </div>
-          <p class="total is-hidden-mobile globalPointsPlayer1">Global Points</p>
-          <p class="current is-hidden-mobile currentPointsPlayer1">Current Points</p>
-          <p class="hidden-total is-hidden-tablet globalPointsPlayer1">Global Points</p>
-          <p class="hidden-current is-hidden-tablet currentPointsPlayer1">Current Points</p>
+          <div class="total is-hidden-mobile">Global Points
+            <p id="globalP1">0</p>
+          </div>
+          <div class="current is-hidden-mobile">Current Points
+            <p id="currentPointsPlayer1">0</p>
+          </div>
+          <div class="hidden-total is-hidden-tablet">Global Points
+            <p class="globalMobilePoints" id="globalP1Mobile">0</p>
+          </div>
+          <div class="hidden-current is-hidden-tablet">Current Points
+            <p class="mobilePoints" id="currentPointsPlayer1Mobile">0</p>
+          </div>
         </div>
         <div class="column is-1">
           <div class="play is-hidden-mobile">
@@ -44,15 +52,15 @@
               </button>
             </p>
             <p>
-              <img class="dice" src="Images/dice6.png" alt="Head's dice 6">
+              <img class="dice" id="diceImages" src="Images/dice6.png" alt="Head's dice 6">
             </p>
             <p class="rolldice">
               Roll Dice <br>
-              <button class="diceRoll"><i class="fa-solid fa-dice"></i></button>
+              <button id="diceRoll"><i class="fa-solid fa-dice"></i></button>
             </p>
             <p class="hold">
               Hold <br>
-              <button class="addScore"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+              <button id="addScore"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
             </p>
           </div>
         </div>
@@ -65,28 +73,39 @@
             </p>
           </div>
           <div class="column is-2 is-mobile is-hidden-tablet">
-            <img class="dice" src="Images/dice6.png" alt="Head's dice 6">
+            <img class="dice" id="diceImagesMobile" src="Images/dice6.png" alt="Head's dice 6">
           </div>
           <div class="column is-3 is-mobile is-hidden-tablet has-text-right">
-            Roll
-            <button class="diceRoll"><i class="fa-solid fa-dice"></i></button>
+            <p>Roll
+              <button id="diceRollMobile">
+                <i class="fa-solid fa-dice"></i>
+              </button>
+            </p>
           </div>
           <div class="column is-3 is-mobile is-hidden-tablet has-text-left">
             Hold
-            <button class="addScore"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+            <button id="addScoreMobile"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
           </div>
         </div>
         <div class="set2 column">
           <div class="player2 has-text-centered">
             <p id="displayPlayer2">Player 2</p>
-            <span class="icon has-text-warning">
+            <span class="icon non-active" id="playerTwo">
               <i class="fa-solid fa-circle"></i>
             </span>
           </div>
-          <p class="total is-hidden-mobile globalPointsPlayer2">Global Points</p>
-          <p class="current is-hidden-mobile currentPointsPlayer2">Current Points</p>
-          <p class="hidden-total is-hidden-tablet globalPointsPlayer2">Global Points</p>
-          <p class="hidden-current is-hidden-tablet currentPointsPlayer2">Current Points</p>
+          <div class="total is-hidden-mobile">Global Points
+            <p id="globalP2">0</p>
+          </div>
+          <div class="current is-hidden-mobile">Current Points
+            <p id="currentPointsPlayer2">0</p>
+          </div>
+          <div class="hidden-total is-hidden-tablet">Global Points
+            <p class="globalMobilePoints" id="globalP2Mobile">0</p>
+          </div>
+          <div class="hidden-current is-hidden-tablet">Current Points
+            <p class="mobilePoints" id="currentPointsPlayer2Mobile">0</p>
+          </div>
         </div>
       </div>
     </section>
@@ -106,7 +125,7 @@
           </p>
         </div>
         <div class="control has-text-centered">
-          <button type="reset" class="button is-warning" id="letsPlay">Lets Play</button>
+          <button class="button is-warning" id="letsPlay">Lets Play</button>
         </div>
       </div>
     </div>
