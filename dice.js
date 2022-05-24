@@ -1,5 +1,5 @@
 
-// Variables
+// Variables //
 
 const newGame = document.querySelector('#newGame');
 const newGameMobile = document.querySelector('#newGameMobile');
@@ -17,8 +17,8 @@ const currentPointsP1Mobile = document.getElementById('currentPointsPlayer1Mobil
 const currentPointsP2Mobile = document.getElementById('currentPointsPlayer2Mobile');
 
 
-const displayPlayer1 = document.getElementById('displayPlayer1');
-const displayPlayer2 = document.getElementById('displayPlayer2');
+const displayPlayer1 = document.querySelector('.displayPlayer1');
+const displayPlayer2 = document.querySelector('.displayPlayer2');
 const player1Name = document.getElementById('player1-name');
 const player2Name = document.getElementById('player2-name');
 
@@ -31,6 +31,9 @@ const diceRollMobile = document.getElementById('diceRollMobile');
 
 const addScore = document.getElementById('addScore');
 const addScoreMobile = document.getElementById('addScoreMobile');
+
+const dice = document.querySelector('.dice');
+const diceMobile = document.querySelector('.diceMobile');
 
 
 
@@ -48,7 +51,7 @@ modalBg.addEventListener('click', () => {
   modal.classList.remove('is-active');
 });
 
-// consts Play button
+// consts Play button //
 
 letsPlay.addEventListener('click', () => {
   // Remettre les points à zéro pour une nouvelle partie
@@ -100,6 +103,11 @@ diceRoll.addEventListener('click', () => {
   let diceImage = 'Images/dice' + diceValue + '.png';
   document.querySelectorAll('img')[0].setAttribute('src', diceImage);
 
+  dice.classList.add("animate");
+      setTimeout(() => {
+        dice.classList.remove("animate");
+      }, 1000);
+
   if (diceValue === 1) {
     if (playerTurn == playerOne) {
       currentPointsPlayer1.textContent = 0;
@@ -124,6 +132,11 @@ diceRollMobile.addEventListener('click', () => {
   let diceImage = 'Images/dice' + diceValue + '.png';
   document.querySelectorAll('img')[1].setAttribute('src', diceImage);
 
+  diceMobile.classList.add("animate");
+      setTimeout(() => {
+        diceMobile.classList.remove("animate");
+      }, 1000);
+
   if (diceValue == 1) {
     if (playerTurn == playerOne) {
       currentPointsP1Mobile.textContent = 0;
@@ -140,17 +153,20 @@ diceRollMobile.addEventListener('click', () => {
 });
 
 
-// Hold Button
+// Hold Button //
+
 
 addScore.addEventListener('click', () => {
   if (playerTurn == playerOne) {
     globalP1.textContent = parseInt(globalP1.textContent) + parseInt(currentPointsPlayer1.textContent);
     currentPointsPlayer1.textContent = 0;
     nextPlayer();
+    winnerPlayer1();
   } else {
     globalP2.textContent = parseInt(globalP2.textContent) + parseInt(currentPointsPlayer2.textContent);
     currentPointsPlayer2.textContent = 0;
     nextPlayer();
+    winnerPlayer2();
   }
 });
 
@@ -159,12 +175,79 @@ addScoreMobile.addEventListener('click', () => {
     globalP1Mobile.textContent = parseInt(globalP1Mobile.textContent) + parseInt(currentPointsP1Mobile.textContent);
     currentPointsP1Mobile.textContent = 0;
     nextPlayer();
+    winnerPlayer1Mobile();
   } else {
     globalP2Mobile.textContent = parseInt(globalP2Mobile.textContent) + parseInt(currentPointsP2Mobile.textContent);
     currentPointsP2Mobile.textContent = 0;
     nextPlayer();
+    winnerPlayer2Mobile();
   }
 });
+
+// Déclarer un gagnant
+
+const winnerPlayer1 = () => {
+  if (globalP1.textContent >= 10) {
+    endGame();
+  }
+};
+
+const winnerPlayer2 = () => {
+  if (globalP2.textContent >= 10) {
+    endGame();
+  }
+};
+// Gagnant Mobile
+
+const winnerPlayer1Mobile = () => {
+  if (globalP1Mobile.textContent >= 10) {
+    endGameMobile();
+  }
+};
+
+const winnerPlayer2Mobile = () => {
+  if (globalP2Mobile.textContent >= 10) {
+    endGameMobile();
+  }
+};
+
+
+// Modal Winner et nouvelle partie
+
+const winnersName = document.getElementById('winnersName');
+const renewGame = document.getElementById('renewGame');
+const modalEndGame = document.getElementById('modalEndGame');
+
+
+const endGame = () => {
+  if (globalP1.textContent >= 10) {
+    winnersName.textContent = displayPlayer1.textContent + " a gagné la partie !!!";
+    modalEndGame.classList.add('is-active');
+  } else {
+    winnersName.textContent = displayPlayer2.textContent + " a gagné la partie !!!";
+    modalEndGame.classList.add('is-active');
+  }
+  renewGame.addEventListener('click', () => {
+    modalEndGame.classList.remove('is-active');
+    modal.classList.add('is-active');
+  });
+};
+
+const endGameMobile = () => {
+  if (globalP1Mobile.textContent >= 10) {
+    winnersName.textContent = displayPlayer1.textContent + " a gagné la partie !!!";
+    modalEndGame.classList.add('is-active');
+  } else {
+    winnersName.textContent = displayPlayer2.textContent + " a gagné la partie !!!";
+    modalEndGame.classList.add('is-active');
+  }
+  renewGame.addEventListener('click', () => {
+    modalEndGame.classList.remove('is-active');
+    modal.classList.add('is-active');
+  });
+};
+
+
 
 
 
