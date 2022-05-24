@@ -12,9 +12,9 @@
 
   <title>DiceBoard</title>
 </head>
-
 <body>
   <div class="container">
+    
     <header>
       <div class="diceboard column is-4 is-offset-4 has-background-primary">
         <h1 class="title">DiceBoard</h1>
@@ -26,18 +26,16 @@
       <div class="board columns">
         <div class="set1 column">
           <div class="player1 has-text-centered">
-            <p id="displayPlayer1">Player 1</p>
-            
-              <i class="fa-solid fa-circle active" id="playerOne"></i>
-            
+            <div class="displayPlayer1">Player 1</div>
+            <p class="active arrow" id="playerOne"><i class="fa-solid fa-left-long"></i></p>
           </div>
-          <div class="total is-hidden-mobile">Global Points
+          <div class="total is-hidden-mobile">
             <p id="globalP1">0</p>
           </div>
-          <div class="current is-hidden-mobile">Current Points
-            <p id="currentPointsPlayer1">0</p>
+          <div class="current is-hidden-mobile"><div class="o">Current Points<p id="currentPointsPlayer1">0</p></div> 
+            
           </div>
-          <div class="hidden-total is-hidden-tablet">Global Points
+          <div class="hidden-total is-hidden-tablet">
             <p class="globalMobilePoints" id="globalP1Mobile">0</p>
           </div>
           <div class="hidden-current is-hidden-tablet">Current Points
@@ -73,7 +71,7 @@
             </p>
           </div>
           <div class="column is-2 is-mobile is-hidden-tablet">
-            <img class="dice" id="diceImagesMobile" src="Images/dice6.png" alt="Head's dice 6">
+            <img class="dice diceMobile" id="diceImagesMobile" src="Images/dice6.png" alt="Head's dice 6">
           </div>
           <div class="column is-3 is-mobile is-hidden-tablet has-text-right">
             <p>Roll
@@ -89,18 +87,16 @@
         </div>
         <div class="set2 column">
           <div class="player2 has-text-centered">
-            <p id="displayPlayer2">Player 2</p>
-            <span class="icon non-active" id="playerTwo">
-              <i class="fa-solid fa-circle"></i>
-            </span>
+            <div class="displayPlayer2">Player 2</div>
+            <p class="non-active arrow" id="playerTwo"><i class="fa-solid fa-left-long"></i></p>
           </div>
-          <div class="total is-hidden-mobile">Global Points
+          <div class="total is-hidden-mobile">
             <p id="globalP2">0</p>
           </div>
-          <div class="current is-hidden-mobile">Current Points
-            <p id="currentPointsPlayer2">0</p>
+          <div class="current is-hidden-mobile"><div class="o">Current Points<p id="currentPointsPlayer2">0</p></div> 
+            
           </div>
-          <div class="hidden-total is-hidden-tablet">Global Points
+          <div class="hidden-total is-hidden-tablet">
             <p class="globalMobilePoints" id="globalP2Mobile">0</p>
           </div>
           <div class="hidden-current is-hidden-tablet">Current Points
@@ -109,7 +105,7 @@
         </div>
       </div>
     </section>
-    <!--Modal-->
+    <!--Modal New Game and player's names-->
     <div class="modal">
       <div class="modal-background">
         <img class="background-dice" src="Images/dice-3.jpg" alt="Head's dice 6">
@@ -118,10 +114,10 @@
         <p class="control title has-text-centered">Choose a name and lets roll !</p>
         <div class="field is-grouped is-grouped-centered">
           <p class="control names p-5">
-            <input class="input" type="text" placeholder="Player 1" id="player1-name" required>
+            <input class="input" type="text" placeholder="Player 1" id="player1-name">
           </p>
           <p class="control names p-5">
-            <input class="input" type="text" placeholder="Player 2" id="player2-name" required>
+            <input class="input" type="text" placeholder="Player 2" id="player2-name">
           </p>
         </div>
         <div class="control has-text-centered">
@@ -129,6 +125,20 @@
         </div>
       </div>
     </div>
+
+    <!--Modal New Game after a win-->
+    <div class="modal" id="modalEndGame">
+      <div class="modal-background">
+        <img class="background-dice" src="Images/dice-3.jpg" alt="Head's dice 6">
+      </div>
+      <div class="modal-content has-background-white py-5 px-5">
+        <p class="control title has-text-centered" id="winnersName"></p>
+        <div class="control has-text-centered">
+          <button class="button is-warning" id="renewGame">New Game</button>
+        </div>
+      </div>
+    </div>
+
   </div>
   <script src="dice.js"></script>
 
