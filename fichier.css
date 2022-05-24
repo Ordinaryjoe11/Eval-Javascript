@@ -1,5 +1,5 @@
 html {
-  background-color: whitesmoke;
+  background-color: rgb(234, 212, 212);
   /*overflow: hidden;*/
 }
 
@@ -29,7 +29,7 @@ h1 {
   height: 100%;
   background-color: rgba(202, 155, 202, 0.912);
   border-radius: 10px;
-  text-align: right;
+  /* text-align: right; */
 }
 
 .set2 {
@@ -47,6 +47,24 @@ h1 {
   height: auto;
 }
 
+
+.dice.animate {
+  animation-name: bounce;
+  animation-duration: 1s;
+  animation-iteration-count: 3;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(200px, 30px, 0px);
+  }
+
+  to {
+    transform: rotate(180deg);
+  }
+}
+
 .rolldice {
   padding-top: 100px;
 }
@@ -61,14 +79,23 @@ h1 {
   font-size: 30px;
 }
 
+.arrow {
+  margin-top: -45px;
+  margin-left: 250px;
+  color: rgb(255, 123, 0);
+}
+
 .total {
   padding-top: 50px;
   text-align: center;
+  font-size: 40px;
+  color: red;
 }
 
 .current {
   text-align: center;
   padding-top: 150px;
+  font-size: 20px;
 }
 
 .background-dice {
@@ -88,6 +115,14 @@ h1 {
   display: none;
 }
 
+.o {
+  border: solid;
+  border-color: blue;
+  padding: 5px;
+  margin-left: 110px;
+  margin-right: 110px;
+}
+
 @media screen and (max-width: 769px) {
   .set1 {
     height: 42%;
@@ -102,38 +137,69 @@ h1 {
   .set3 {
     height: 10%;
   }
+
   .hidden-total {
     text-align: left;
     padding-left: 20px;
-    /*padding-top: 5px;*/
+    margin-top: 30px;
+    font-size: 25px;
+    color: red;
   }
+
   .hidden-current {
     text-align: right;
     padding-right: 20px;
-    margin-top: -57px;
+    margin-top: -40px;
   }
+
   .player1,
-.player2 {
-  font-size: 22px;
-}
-.dice {
-  height: 100px;
-  width: 50px;
-  margin-top: -65px;
-}
-.modal-content {
-  height: auto;
-  width: 75%;
-}
-.names {
-  width: 50%;
-}
-.mobilePoints {
-  padding-right: 45px;
-  padding-top: 10px;
-}
-.globalMobilePoints {
-  padding-left: 45px;
-  padding-top: 10px;
-}
+  .player2 {
+    font-size: 22px;
+  }
+
+  .dice {
+    height: 100px;
+    width: 50px;
+    margin-top: -65px;
+  }
+
+  .modal-content {
+    height: auto;
+    width: 75%;
+  }
+
+  .names {
+    width: 50%;
+  }
+
+  .mobilePoints {
+    padding-right: 45px;
+    padding-top: 10px;
+  }
+
+  .globalMobilePoints {
+    padding-left: 45px;
+    padding-top: 10px;
+  }
+
+  .arrow {
+    margin-top: -33px;
+    margin-left: 180px;
+  }
+
+  .diceMobile.animate {
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+  }
+  
+  @keyframes bounce {
+    from {
+      transform: translate3d(200px, 10px, 0px);
+    }
+  
+    to {
+      transform: rotate(180deg);
+    }
+  }
 }
