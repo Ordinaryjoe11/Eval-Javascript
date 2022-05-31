@@ -1,6 +1,10 @@
 html {
-  background-color: rgb(234, 212, 212);
-  /*overflow: hidden;*/
+  background-image: url(Images/bgDice.jpg);
+  background-size: 100% 100%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
 }
 
 header {
@@ -27,14 +31,13 @@ h1 {
 
 .set1 {
   height: 100%;
-  background-color: rgba(202, 155, 202, 0.912);
+  background-color: rgba(181, 159, 181, 0.912);
   border-radius: 10px;
-  /* text-align: right; */
 }
 
 .set2 {
   height: 100%;
-  background-color: rgba(200, 179, 200, 0.912);
+  background-color: rgba(222, 197, 222, 0.912);
   border-radius: 10px;
 }
 
@@ -51,8 +54,7 @@ h1 {
 .dice.animate {
   animation-name: bounce;
   animation-duration: 1s;
-  animation-iteration-count: 3;
-  animation-timing-function: ease;
+  animation-timing-function: ease-in-out;
 }
 
 @keyframes bounce {
@@ -173,8 +175,7 @@ h1 {
   }
 
   .mobilePoints {
-    padding-right: 45px;
-    padding-top: 10px;
+    padding-top: 0px;
   }
 
   .globalMobilePoints {
@@ -192,14 +193,27 @@ h1 {
     animation-duration: 1s;
     animation-timing-function: ease;
   }
-  
+
   @keyframes bounce {
     from {
       transform: translate3d(200px, 10px, 0px);
     }
-  
+
     to {
       transform: rotate(180deg);
     }
+  }
+
+  .a {
+    border: solid;
+    border-color: blue;
+    padding: 5px;
+    margin-right: 5%;
+    margin-left: 70%;
+    text-align: center; 
+  }
+
+  html {
+    overflow: hidden;
   }
 }
