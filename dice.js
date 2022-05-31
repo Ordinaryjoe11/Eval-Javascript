@@ -235,7 +235,7 @@ const endGame = () => {
 };
 
 const endGameMobile = () => {
-  if (globalP1Mobile.textContent >= 10) {
+  if (globalP1Mobile.textContent >= 100) {
     winnersName.textContent = displayPlayer1.textContent + " is the WINNER !";
     modalEndGame.classList.add('is-active');
   } else {
