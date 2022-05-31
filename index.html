@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="fichier.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+
+  <title>DiceBoard</title>
+</head>
+
+<body>
+  <div class="container">
+
+    <header>
+      <div class="diceboard column is-4 is-offset-4 has-background-primary">
+        <h1 class="title">DiceBoard</h1>
+      </div>
+    </header>
+
+    <section>
+
+      <div class="board columns">
+
+        <!--Player 1-->
+        <div class="set1 column">
+          <div class="player1 has-text-centered">
+            <div class="displayPlayer1">Player 1</div>
+            <p class="active arrow" id="playerOne"><i class="fa-solid fa-left-long"></i></p>
+          </div>
+          <div class="total is-hidden-mobile">
+            <p id="globalP1">0</p>
+          </div>
+          <div class="current is-hidden-mobile">
+            <div class="o">Current<p id="currentPointsPlayer1">0</p>
+            </div>
+          </div>
+          <div class="hidden-total is-hidden-tablet">
+            <p class="globalMobilePoints" id="globalP1Mobile">0</p>
+          </div>
+          <div class="hidden-current is-hidden-tablet a">Current
+            <p class="mobilePoints b" id="currentPointsPlayer1Mobile">0</p>
+          </div>
+        </div>
+
+        <!--Events column-->
+        <div class="column is-1">
+          <div class="play is-hidden-mobile">
+            <p>New Game <br>
+              <button id="newGame">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </p>
+            <p>
+              <img class="dice" id="diceImages" src="Images/dice6.png" alt="Head's dice 6">
+            </p>
+            <p class="rolldice">
+              Roll Dice <br>
+              <button id="diceRoll"><i class="fa-solid fa-dice"></i></button>
+            </p>
+            <p class="hold">
+              Hold <br>
+              <button id="addScore"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+            </p>
+          </div>
+        </div>
+
+        <!--Events column on Mobile-->
+        <div class="set3 columns is-mobile is-hidden-tablet">
+          <div class="column is-4 is-mobile is-hidden-tablet">
+            <p>New Game
+              <button id="newGameMobile">
+                <i class="fa-solid fa-plus newGame"></i>
+              </button>
+            </p>
+          </div>
+          <div class="column is-2 is-mobile is-hidden-tablet">
+            <img class="dice diceMobile" id="diceImagesMobile" src="Images/dice6.png" alt="Head's dice 6">
+          </div>
+          <div class="column is-3 is-mobile is-hidden-tablet has-text-right">
+            <p>Roll
+              <button id="diceRollMobile">
+                <i class="fa-solid fa-dice"></i>
+              </button>
+            </p>
+          </div>
+          <div class="column is-3 is-mobile is-hidden-tablet has-text-left">
+            Hold
+            <button id="addScoreMobile"><i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+          </div>
+        </div>
+
+        <!--Player 2-->
+        <div class="set2 column">
+          <div class="player2 has-text-centered">
+            <div class="displayPlayer2">Player 2</div>
+            <p class="non-active arrow" id="playerTwo"><i class="fa-solid fa-left-long"></i></p>
+          </div>
+          <div class="total is-hidden-mobile">
+            <p id="globalP2">0</p>
+          </div>
+          <div class="current is-hidden-mobile">
+            <div class="o">Current<p id="currentPointsPlayer2">0</p>
+            </div>
+
+          </div>
+          <div class="hidden-total is-hidden-tablet">
+            <p class="globalMobilePoints" id="globalP2Mobile">0</p>
+          </div>
+          <div class="hidden-current is-hidden-tablet a">
+            Current
+            <p class="mobilePoints b" id="currentPointsPlayer2Mobile">0</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+
+  <!--Modal New Game and player's names-->
+  <div class="modal">
+    <div class="modal-background">
+      <img class="background-dice" src="Images/dice-3.jpg" alt="Head's dice 6">
+    </div>
+    <div class="modal-content has-background-white py-5 px-5">
+      <p class="control title has-text-centered">Choose a name and lets roll !</p>
+      <p class="has-text-centered">Click on
+        <i class="fa-solid fa-dice"></i>
+        to roll the dice, then click on 
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        to hold your score and progress to the victory.
+      </p>
+      <p class="has-text-centered">The first to reach 100 points wins the game!</p>
+      <div class="field is-grouped is-grouped-centered">
+        <p class="control names p-5">
+          <input class="input" type="text" placeholder="Player 1" id="player1-name">
+        </p>
+        <p class="control names p-5">
+          <input class="input" type="text" placeholder="Player 2" id="player2-name">
+        </p>
+      </div>
+      <div class="control has-text-centered">
+        <button class="button is-warning" id="letsPlay">Lets Play</button>
+      </div>
+    </div>
+  </div>
+
+  <!--Modal New Game after a win-->
+  <div class="modal" id="modalEndGame">
+    <div class="modal-background">
+      <img class="background-dice" src="Images/dice-3.jpg" alt="Head's dice 6">
+    </div>
+    <div class="modal-content has-background-white py-5 px-5">
+      <p class="control title has-text-centered" id="winnersName"></p>
+      <div class="control has-text-centered">
+        <button class="button is-warning" id="renewGame">New Game</button>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  <script src="dice.js"></script>
+
+</body>
+
+</html>
