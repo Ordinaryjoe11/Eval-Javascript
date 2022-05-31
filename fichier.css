@@ -84,7 +84,7 @@ h1 {
 .arrow {
   margin-top: -45px;
   margin-left: 250px;
-  color: rgb(255, 123, 0);
+  color: rgb(249, 142, 43);
 }
 
 .total {
@@ -117,7 +117,7 @@ h1 {
   display: none;
 }
 
-.o {
+.border {
   border: solid;
   border-color: blue;
   padding: 5px;
@@ -160,9 +160,9 @@ h1 {
   }
 
   .dice {
-    height: 100px;
+    height: 90px;
     width: 50px;
-    margin-top: -65px;
+    margin-top: -60px;
   }
 
   .modal-content {
@@ -204,16 +204,12 @@ h1 {
     }
   }
 
-  .a {
+  .mobileBorder {
     border: solid;
     border-color: blue;
     padding: 5px;
     margin-right: 5%;
     margin-left: 70%;
-    text-align: center; 
-  }
-
-  html {
-    overflow: hidden;
+    text-align: center;
   }
 }
