@@ -35,6 +35,9 @@ const addScoreMobile = document.getElementById('addScoreMobile');
 const dice = document.querySelector('.dice');
 const diceMobile = document.querySelector('.diceMobile');
 
+const playerOne = document.getElementById('playerOne');
+const playerTwo = document.getElementById('playerTwo');
+
 
 
 // Modal New game //
